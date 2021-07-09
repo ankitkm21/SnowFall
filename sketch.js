@@ -9,6 +9,7 @@ var Character;
 var CharacterImg;
 var Snowman;
 var SnowmanImg;
+var Snowparticle=[];
 function preload(){
 Background = loadImage("snow2.jpg");
 CharacterImg = loadImage("Character.png");
@@ -38,7 +39,15 @@ function setup() {
 function draw() {
   background(Background);  
   Engine.update(engine);
+  if(frameCount%60===0){
+    Snowparticle.push(new Snow(random(width/2-30, width/2+30), 10,10));
+
+  }
+
+  for (var j = 0; j < Snowparticle.length; j++) {
+   
+    Snowparticle[j].display();
+  }
  
-  Snow1.display();
   drawSprites();
 }
