@@ -21,10 +21,6 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  if(frameCount%90 === 0){
-    Snow1 = new Snow(random(width/2-10,width/2+10),10,10);
-    console.log("hi")
-      }
       
   Character = createSprite(540,350,10,10);
   Character.addImage(CharacterImg);
@@ -39,8 +35,8 @@ function setup() {
 function draw() {
   background(Background);  
   Engine.update(engine);
-  if(frameCount%60===0){
-    Snowparticle.push(new Snow(random(width/2-30, width/2+30), 10,10));
+  if(frameCount%20===0){
+    Snowparticle.push(new Snow(random(100, 700), -50,10));
 
   }
 
